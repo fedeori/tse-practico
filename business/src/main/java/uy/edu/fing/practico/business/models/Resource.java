@@ -1,16 +1,11 @@
-package uy.edu.fing.practico.models;
+package uy.edu.fing.practico.business.models;
 
-import javax.persistence.*;
 
-@Entity
 public class Resource {
-    @Id
-    @GeneratedValue
     private Integer id;
     private String code;
     private Double unitPrice;
     private Integer quantity;
-    @ManyToOne
     private ResourceType resourceType;
 
     public Integer getId() {
@@ -43,6 +38,14 @@ public class Resource {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public ResourceType getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType;
     }
 
     public Resource() {
