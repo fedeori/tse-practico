@@ -1,15 +1,21 @@
-package uy.edu.fing.practico.dto;
+package uy.edu.fing.practico.business.models;
 
-import java.util.List;
 
-public class ResourceTypeDto {
+public class ResourceType {
     private Integer id;
     private String name;
-    private Double price;
+    private String description;
     private Double referencePrice;
-    private List<ResourceDto> resourceDtos;
 
-    public ResourceTypeDto() {
+    public ResourceType() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getId() {
@@ -28,14 +34,6 @@ public class ResourceTypeDto {
         this.name = name;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public Double getReferencePrice() {
         return referencePrice;
     }
@@ -44,11 +42,4 @@ public class ResourceTypeDto {
         this.referencePrice = referencePrice;
     }
 
-    public List<ResourceDto> getResourceDtos() {
-        return resourceDtos;
-    }
-
-    public void setResourceDtos(List<ResourceDto> resourceDtos) {
-        this.resourceDtos = resourceDtos;
-    }
 }

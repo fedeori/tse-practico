@@ -1,11 +1,22 @@
-package uy.edu.fing.practico.dto;
+package uy.edu.fing.practico.business.dto;
 
-public class ResourceDto {
+import java.io.Serializable;
+
+public class ResourceDto implements Serializable {
     private Integer id;
     private String code;
     private Double unitPrice;
     private Integer quantity;
-    private ResourceTypeDto resourceTypeDto;
+
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+    }
+
+    private String resourceTypeName;
 
     public Integer getId() {
         return id;
@@ -40,5 +51,10 @@ public class ResourceDto {
     }
 
     public ResourceDto() {
+    }
+
+    @Override
+    public String toString() {
+        return "Codigo: " + code + "\nPrice: " + unitPrice + "\nQuantity: " + quantity;
     }
 }
